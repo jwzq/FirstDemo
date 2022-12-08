@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+/**
+ * 指定仓库的路径mavenCentral()表示使用中央仓库
+ */
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+/**
+ * gradle工程的所有jar包都在dependencies属性内放置
+ */
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.23'
+
+}
+
+test {
+    useJUnitPlatform()
+}
